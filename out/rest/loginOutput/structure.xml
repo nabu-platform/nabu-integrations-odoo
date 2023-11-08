@@ -1,0 +1,79 @@
+<structure name="anonymous">
+    <field name="jsonrpc" type="java.lang.String"/>
+    <structure name="result">
+        <field name="uid" type="java.lang.Long"/>
+        <field name="is_system" type="java.lang.Boolean"/>
+        <field name="is_admin" type="java.lang.Boolean"/>
+        <structure name="user_context">
+            <field name="lang" type="java.lang.String"/>
+            <field name="tz" type="java.lang.String"/>
+            <field name="uid" type="java.lang.Long"/>
+        </structure>
+        <field name="db" type="java.lang.String"/>
+        <structure name="user_settings">
+            <field name="id" type="java.lang.Long"/>
+            <structure name="user_id">
+                <field name="id" type="java.lang.Long"/>
+            </structure>
+            <field name="is_discuss_sidebar_category_channel_open" type="java.lang.Boolean"/>
+            <field name="is_discuss_sidebar_category_chat_open" type="java.lang.Boolean"/>
+            <field name="push_to_talk_key" type="java.lang.Boolean"/>
+            <field name="use_push_to_talk" type="java.lang.Boolean"/>
+            <field name="voice_active_duration" type="java.lang.Long"/>
+            <field name="homemenu_config" type="java.lang.Boolean"/>
+        </structure>
+        <field name="server_version" type="java.lang.String"/>
+        <field maxOccurs="unbounded" name="server_version_info" type="java.lang.String"/>
+        <field name="support_url" type="java.lang.String"/>
+        <field name="name" type="java.lang.String"/>
+        <field name="username" type="java.lang.String"/>
+        <field name="partner_display_name" type="java.lang.String"/>
+        <field name="company_id" type="java.lang.Long"/>
+        <field name="partner_id" type="java.lang.Long"/>
+        <field name="web.base.url" type="java.lang.String"/>
+        <field name="active_ids_limit" type="java.lang.Long"/>
+        <field name="max_file_upload_size" type="java.lang.Long"/>
+        <field name="home_action_id" type="java.lang.Boolean"/>
+        <structure name="cache_hashes">
+            <field name="translations" type="java.lang.String"/>
+            <field name="load_menus" type="java.lang.String"/>
+        </structure>
+        <structure name="currencies">
+            <structure name="124">
+                <field name="symbol" type="java.lang.String"/>
+                <field name="position" type="java.lang.String"/>
+                <field maxOccurs="unbounded" name="digits" type="java.lang.Long"/>
+            </structure>
+        </structure>
+        <structure name="bundle_params">
+            <field name="lang" type="java.lang.String"/>
+        </structure>
+        <structure name="user_companies">
+            <field name="current_company" type="java.lang.Long"/>
+            <structure name="allowed_companies">
+                <structure name="1">
+                    <field name="id" type="java.lang.Long"/>
+                    <field name="name" type="java.lang.String"/>
+                    <field name="sequence" type="java.lang.Long"/>
+                    <field name="parent_id" type="java.lang.Boolean"/>
+                </structure>
+            </structure>
+        </structure>
+        <field name="show_effect" type="java.lang.Boolean"/>
+        <field name="display_switch_company_menu" type="java.lang.Boolean"/>
+        <field maxOccurs="unbounded" name="user_id" type="java.lang.Long"/>
+        <field name="tour_disable" type="java.lang.Boolean"/>
+        <field name="notification_type" type="java.lang.String"/>
+        <field name="warning" type="java.lang.String"/>
+        <field name="expiration_date" type="java.lang.String"/>
+        <field name="expiration_reason" type="java.lang.String"/>
+        <field name="map_box_token" type="java.lang.Boolean"/>
+        <field name="odoobot_initialized" type="java.lang.Boolean"/>
+        <field name="iap_company_enrich" type="java.lang.Boolean"/>
+        <field name="odoo_website_url" type="java.lang.String"/>
+        <field name="ocn_token_key" type="java.lang.Boolean"/>
+        <field name="fcm_project_id" type="java.lang.Boolean"/>
+        <field name="inbox_action" type="java.lang.Long"/>
+        <field name="is_quick_edit_mode_enabled" type="java.lang.Boolean"/>
+    </structure>
+</structure>

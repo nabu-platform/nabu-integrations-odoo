@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-10-09T13:54:42.982+02:00" lastModified="2023-11-08T10:28:59.596+01:00" leaf="true" version="43">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>nabu.integrations.odoo.services.loginToken</references>
+    <references>nabu.utils.reflection.Type.inspect</references>
+    <references>nabu.utils.types.ParameterDescription</references>
+    <references>nabu.integrations.odoo.services.autoLogin</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+    <references>nabu.integrations.odoo.services.model.field</references>
+    <references>nabu.integrations.odoo.out.rest.list</references>
+    <references>nabu.utils.String.split</references>
+    <references>nabu.utils.reflection.Type.get</references>
+</node>

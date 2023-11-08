@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.crud.provider.CRUDProviderManager" created="2023-11-08T10:52:27.830+01:00" lastModified="2023-11-08T10:53:27.262+01:00" leaf="true" version="3">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties>
+        <property key="crudProvider">odoo</property>
+    </properties>
+    <references>nabu.integrations.odoo.providers.crud.create</references>
+    <references>nabu.integrations.odoo.providers.crud.delete</references>
+    <references>nabu.integrations.odoo.providers.crud.list</references>
+    <references>nabu.integrations.odoo.providers.crud.update</references>
+</node>

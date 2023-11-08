@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-07T13:18:30.229+01:00" lastModified="2023-11-08T11:09:44.662+01:00" leaf="true" version="10">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties>
+        <property key="name">Odoo</property>
+    </properties>
+    <references>nabu.integrations.odoo.services.model.model</references>
+    <references>nabu.integrations.odoo.services.model.list</references>
+    <references>be.nabu.eai.module.types.structure.ModelGenerator.getModels</references>
+    <references>nabu.utils.String.conventionize</references>
+    <references>be.nabu.eai.module.types.structure.StructureModel</references>
+</node>

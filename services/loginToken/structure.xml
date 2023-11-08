@@ -1,0 +1,8 @@
+<structure name="loginToken">
+    <field name="uid" type="java.lang.Long"/>
+    <field name="sessionId" type="java.lang.String"/>
+    <field name="endpoint" type="java.net.URI"/>
+    <field name="database" type="java.lang.String"/>
+    <field name="username" type="java.lang.String"/>
+    <field name="password" type="java.lang.String"/>
+</structure>

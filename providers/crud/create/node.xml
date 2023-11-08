@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-08T10:52:31.616+01:00" lastModified="2023-11-08T10:52:56.640+01:00" leaf="true" version="3">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>be.nabu.eai.module.services.crud.provider.CRUDMeta</references>
+    <references>be.nabu.eai.module.services.crud.api.CRUDProvider.create</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+</node>

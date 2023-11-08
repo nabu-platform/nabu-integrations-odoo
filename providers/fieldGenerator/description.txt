@@ -1,0 +1,6 @@
+Some id fields (with one to many etc) still return an array, for instance company_id might return:
+
+[
+	5,
+	"Company Name"
+]

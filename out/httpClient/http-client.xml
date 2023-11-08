@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<httpClient>
+    <cookiePolicy>ACCEPT_ALL</cookiePolicy>
+    <maxAmountOfConnectionsPerTarget>1</maxAmountOfConnectionsPerTarget>
+    <type>SYNCHRONOUS</type>
+    <static>false</static>
+    <captureErrors>false</captureErrors>
+    <captureSuccessful>false</captureSuccessful>
+</httpClient>

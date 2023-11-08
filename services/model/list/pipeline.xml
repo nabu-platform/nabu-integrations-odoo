@@ -1,0 +1,12 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field minOccurs="0" name="q" type="java.lang.String"/>
+        <field minOccurs="0" name="limit" type="java.lang.Long"/>
+        <field minOccurs="0" name="offset" type="java.lang.Long"/>
+        <structure definition="nabu.integrations.odoo.services.loginToken" minOccurs="0" name="token"/>
+    </structure>
+    <structure name="output">
+        <structure definition="nabu.integrations.odoo.services.model.model" maxOccurs="unbounded" minOccurs="0" name="models"/>
+    </structure>
+    <structure definition="be.nabu.eai.repository.util.Filter" maxOccurs="unbounded" minOccurs="0" name="filters"/>
+</structure>

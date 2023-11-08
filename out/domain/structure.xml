@@ -1,0 +1,4 @@
+<structure name="domain">
+    <field comment="Should be &quot;&amp;&quot; or &quot;|&quot;, defaults to &quot;&amp;&quot;" minOccurs="0" name="operator" type="java.lang.String"/>
+    <field maxOccurs="unbounded" minOccurs="0" name="filter" type="java.lang.String"/>
+</structure>

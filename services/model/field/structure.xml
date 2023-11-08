@@ -1,0 +1,7 @@
+<structure name="field">
+    <field name="name" type="java.lang.String"/>
+    <field minOccurs="0" name="title" type="java.lang.String"/>
+    <field minOccurs="0" name="description" type="java.lang.String"/>
+    <field minOccurs="0" name="type" type="java.lang.String"/>
+    <field minOccurs="0" name="searchable" type="java.lang.Boolean"/>
+</structure>

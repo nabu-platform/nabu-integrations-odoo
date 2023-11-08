@@ -1,0 +1,21 @@
+<structure name="jsonRpc">
+    <field name="jsonrpc" type="java.lang.String"/>
+    <structure name="params">
+        <field minOccurs="0" name="db" type="java.lang.String"/>
+        <field minOccurs="0" name="uid" type="java.lang.String"/>
+        <field minOccurs="0" name="login" type="java.lang.String"/>
+        <field minOccurs="0" name="password" type="java.lang.String"/>
+        <field minOccurs="0" name="model" type="java.lang.String"/>
+        <field minOccurs="0" name="method" type="java.lang.String"/>
+        <field maxOccurs="unbounded" name="args" type="java.lang.String"/>
+        <structure name="kwargs">
+            <structure comment="Complex type with unknown structure at this point" definition="java.lang.Object" minOccurs="0" name="context"/>
+            <structure definition="nabu.integrations.odoo.out.domain" matrix="true" maxOccurs="unbounded" minOccurs="0" name="domain"/>
+            <field maxOccurs="unbounded" minOccurs="0" name="fields" type="java.lang.String"/>
+            <field maxOccurs="unbounded" minOccurs="0" name="attributes" type="java.lang.String"/>
+            <field minOccurs="0" name="limit" type="java.lang.Long"/>
+            <field minOccurs="0" name="offset" type="java.lang.Long"/>
+            <field minOccurs="0" name="order" type="java.lang.String"/>
+        </structure>
+    </structure>
+</structure>

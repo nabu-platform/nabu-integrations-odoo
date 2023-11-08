@@ -1,0 +1,137 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="c08009eeaa9048748260667ffab2147e"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="43089e7023f143d2b81dedcb72ccb706"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="3b9e208ab5594956919b52c6b5f7eda4"
+				serviceId="nabu.integrations.odoo.services.model.list"
+				resultName="resultdce83c7a1f174992b0e209dc9076e6de"
+				temporaryMapping="true"
+				x="179"
+				y="73"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="d50240184ac64b289547982c75c00cfd"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultdce83c7a1f174992b0e209dc9076e6de/models</from>
+			<to>models</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="dd4f96b0b9574aff938f09c56d0a00db"
+			lineNumber="3"
+			variable="model"
+			into="output/models">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="7196c444f747479f97a63e7d3e7b7625"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e3c975ec98394099b4359d4ee912f9e1"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>model/model</from>
+				<to>output/models[0]/alias</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="c061459d20f34c309e2cb8a008a520bc"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>model/model</from>
+				<to>output/models[0]/collectionName</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="a81536cdf14e43f2998fce6e47056ca4"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>model/name</from>
+				<to>output/models[0]/title</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="e73d5e4fd1cc404eabaf0208aefb57d4"
+					serviceId="nabu.utils.String.conventionize"
+					resultName="result209faa52bc5c4c3984fd17343208a8a6"
+					temporaryMapping="true"
+					x="258"
+					y="329"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e593f2aa7bb14e3b88ebc651d635c9be"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>model/model</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="09789aa11df248c3a43e8cf8e1a06c82"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>DASH</from>
+					<to>from</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="0ee77b7fb75e436aafbcaf06b2f779f6"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>LOWER_CAMEL_CASE</from>
+					<to>to</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cc0796fec0694a74942f5a205697e1eb"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result209faa52bc5c4c3984fd17343208a8a6/conventionized</from>
+				<to>output/models[0]/name</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="79e8361268f34656bfe9847aa78065c4"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>model/model</from>
+				<to>output/models[0]/id</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8893ca63531a44e8b1d646fc07d72f5d"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>odoo</from>
+				<to>output/models[0]/collectionCrudProvider</to>
+			</steps>
+		</steps>
+		<query>models</query>
+	</steps>
+</sequence>

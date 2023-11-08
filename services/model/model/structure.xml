@@ -1,0 +1,8 @@
+<structure name="record">
+    <field name="name" type="java.lang.String"/>
+    <field name="model" type="java.lang.String"/>
+    <field name="state" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="field_id" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="view_ids" type="java.lang.String"/>
+    <field maxOccurs="unbounded" name="access_ids" type="java.lang.String"/>
+</structure>

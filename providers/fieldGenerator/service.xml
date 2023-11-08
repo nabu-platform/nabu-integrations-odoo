@@ -1,0 +1,501 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="70fca02043f646568cd0ff9d7d9d1511"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d493b3df02f54b2ba8e7faabe329e956"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="f8d9a24dff524827881dd66955cfc0b2"
+				serviceId="nabu.integrations.odoo.services.model.fields"
+				resultName="resultb2248def0dbb402bb1bf3d30bb54db57"
+				temporaryMapping="true"
+				x="149"
+				y="41"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="8ec31dc03fed4d4997694288d977b04b"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/modelId</from>
+				<to>model</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="c0d320aff76549de86375db42ce67035"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>resultb2248def0dbb402bb1bf3d30bb54db57/fields</from>
+			<to>fields</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			comment="All records have an id field? You even get it back if you don't ask for it"
+			disabled="true"
+			id="ebe7516bfb1643dda9b88b34ce03dfe9"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="2f4377b960ac44a2a6bea79c629782d1"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>id</from>
+			<to>output/fields[0]/name</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="2a036c0d7e7044dca332cdb61b1f138d"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>true</from>
+			<to>output/fields[0]/primaryKey</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="6be39c3325074ceda0a94ff6fa070d8c"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>long</from>
+			<to>output/fields[0]/type</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="0f1454901e034184adc328167a722a28"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>1</from>
+			<to>output/fields[0]/minOccurs</to>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="f7afd6d577144f6a91edd10bf4c9424b"
+				mask="false"
+				optional="false"
+				fixedValue="true">
+			<from>1</from>
+			<to>output/fields[0]/maxOccurs</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.For"
+			disabled="false"
+			id="cfa561d3fa814a0a9a063c29b72ac8ad"
+			lineNumber="4"
+			variable="field"
+			into="output/fields">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Map main. There is no optionality indication so everything is optional"
+				disabled="false"
+				id="af64c84aff024abebacdeb40126632ea"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="4c067fd8007f4197ab53f2f0bb73016b"
+					serviceId="nabu.utils.String.conventionize"
+					resultName="resulta3581c8362254a42ac6a07bbfaff3ff6"
+					temporaryMapping="true"
+					x="167"
+					y="121"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="bef2c5d6db9d489791ee56b063cbfd92"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>field/name</from>
+					<to>content</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4887bfc828c34f95b8df7eb9520241f5"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>UNDERSCORE</from>
+					<to>from</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="84408996f0294f248739edbd28524715"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>LOWER_CAMEL_CASE</from>
+					<to>to</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="01fae312f7ed4bbc9591bfa90d09bc46"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resulta3581c8362254a42ac6a07bbfaff3ff6/conventionized</from>
+				<to>output/fields[0]/name</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4300df108274428f8c916cb21e39e425"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>field/name</from>
+				<to>output/fields[0]/alias</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="cc8fdf1bf2174782a82d4dc0fd9cd5f2"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>field/title</from>
+				<to>output/fields[0]/title</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2df1a0fdf587432092fddc7333bc4bc7"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>field/description</from>
+				<to>output/fields[0]/description</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="2075699e5a494531a05c044f21b906bd"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>0</from>
+				<to>output/fields[0]/minOccurs</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+				disabled="false"
+				id="3023ee6bf2ce4fe091d1d508c9ec1614"
+				lineNumber="6"
+				query="field/type">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="71f610aa144b4918a69ef49284a93fc2"
+					label="&quot;json&quot;"
+					lineNumber="7">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="fc6fffadf3534883a08579ab1fdbc06b"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>string</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="d511aa63bfed4e5e95f4f85dccb0a1dd"
+					label="&quot;integer&quot;"
+					lineNumber="8">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="76c364911da04865a863fa4ed2dcac15"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>long</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="36eb79c189924beeadc562405e2d02cc"
+					label="&quot;many2one&quot;"
+					lineNumber="9">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="8e616f4679c04ccab673d802560d23eb"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>string</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d597c80d63cd462999cb54108c76a1f6"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>0</from>
+					<to>output/fields[0]/maxOccurs</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="a499ec0aaba9471b95eee322ad4df8da"
+					label="&quot;many2many&quot;"
+					lineNumber="10">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="8e8496ca39c24fd68dbcb9d177e840c2"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>string</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="637ace39c8f345a79bbf5784285bc36e"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>0</from>
+					<to>output/fields[0]/maxOccurs</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="1c768894fb984dc1aa7ff06471bde4fb"
+					label="&quot;one2many&quot;"
+					lineNumber="11">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="58645be2cfbe4fe7b3bc37f44cf08eb4"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>string</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="20ab89c8d9f04833a180b8b417a1c1b9"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>0</from>
+					<to>output/fields[0]/maxOccurs</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="4d72dfb5823d42cca6f03e8f947708e8"
+					label="&quot;char&quot;"
+					lineNumber="12">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="4f439e9b464048888d0962654519867a"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>string</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="0a98428f31f3471bae363f76030561e8"
+					label="&quot;selection&quot;"
+					lineNumber="13">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="5dce2f4ba77649439ea69cbcadffbf3c"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>string</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="ed123c9809fd4cacb350f0985a108089"
+					label="&quot;date&quot;"
+					lineNumber="14">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="2937d480fd51438fbd9e71579ed0f850"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>dateTime</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="7ed47a39f8244d9a87321ee45fd8bb71"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>date</from>
+					<to>output/fields[0]/format</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="006031ba41c243f9bc714d3316679348"
+					label="&quot;boolean&quot;"
+					lineNumber="15">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="97d210f65e094b9aadde177ac9145ac3"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>boolean</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="737865b5e0f64d1abb7aa9ed44f48c93"
+					label="&quot;monetary&quot;"
+					lineNumber="16">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c58b6aebbd004a149966fb78c5242499"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>decimal</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="70de972d6eed4b23bc532bf36e15818f"
+					label="&quot;float&quot;"
+					lineNumber="17">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="2ab4f0fd8d924f2888c994ebaaa363a7"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>double</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="7d6ec16ba8fe4070afe09c7b6456580e"
+					label="&quot;binary&quot;"
+					lineNumber="18">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1a037dce423d4e4a8e82de7d1b7fb9ac"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>base64Binary</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="9b6516885a2a4a7db07472f49d6ca4c2"
+					label="&quot;text&quot;"
+					lineNumber="19">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1e194a2f2de648bfa5d20d5a821dd678"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>string</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="54e32b347af749b7b39bde1c922cba6a"
+					label="&quot;html&quot;"
+					lineNumber="20">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="748d238f649a4f0faa6dc08aa510f423"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>string</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="564721be24bb43c99b8ed6541773c246"
+					label="&quot;datetime&quot;"
+					lineNumber="21">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="49b2f19c09a944c8834ca0c9c8d2508d"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>dateTime</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="0ff453d2f1c141c2af1258a3a19137a0"
+					label="&quot;time&quot;"
+					lineNumber="22">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="371e409410744b81828f6fc766c2cb2f"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>dateTime</from>
+					<to>output/fields[0]/type</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c017feebcc87432aa8596377c55cd3d7"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>time</from>
+					<to>output/fields[0]/format</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+					disabled="false"
+					id="4b7f6aa837aa4a83a876f106cec65800"
+					lineNumber="23"
+					message="=&quot;Unknown odoo data type: &quot; + field/type"
+					whitelist="false" xsi:nil="true"/>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Set primary key on id field"
+				disabled="false"
+				id="7a4fb0b6e89e4a5aa8c5aab739ad16fa"
+				lineNumber="24">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="16959a81284243759a283c701e2a986d"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>=field/name == "id"</from>
+				<to>output/fields[0]/primaryKey</to>
+			</steps>
+		</steps>
+		<query>fields</query>
+	</steps>
+</sequence>

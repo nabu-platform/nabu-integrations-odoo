@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-08T10:52:40.206+01:00" lastModified="2023-11-08T10:56:07.919+01:00" leaf="true" version="9">
+    <environmentId>apollo</environmentId>
+    <hidden>false</hidden>
+    <locked>false</locked>
+    <properties/>
+    <references>be.nabu.eai.module.services.crud.provider.CRUDMeta</references>
+    <references>be.nabu.eai.module.services.crud.CRUDService$TotalCount</references>
+    <references>be.nabu.eai.module.services.crud.CRUDFilter</references>
+    <references>be.nabu.eai.module.services.crud.api.CRUDProvider.list</references>
+    <references>java.lang.Integer</references>
+    <references>nabu.utils.reflection.Type.describe</references>
+    <references>be.nabu.eai.module.services.crud.ListResult</references>
+    <references>nabu.integrations.odoo.services.object.list</references>
+    <references>nabu.utils.List.size</references>
+    <references>java.lang.Long</references>
+    <references>nabu.utils.reflection.Type.details</references>
+    <references>java.lang.Boolean</references>
+    <references>java.lang.Object</references>
+    <references>java.lang.String</references>
+</node>

@@ -1,0 +1,4 @@
+<structure interface="be.nabu.eai.module.services.crud.api.CRUDProvider.list" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+</structure>

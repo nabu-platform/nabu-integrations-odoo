@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<dataModel>
+    <entries>
+        <synchronize>true</synchronize>
+        <type>nabu.integrations.odoo.database.types.odooDatabase</type>
+        <x>349</x>
+        <y>107</y>
+    </entries>
+</dataModel>

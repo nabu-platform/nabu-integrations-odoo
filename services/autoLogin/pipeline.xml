@@ -1,0 +1,13 @@
+<structure name="pipeline">
+    <structure name="input"/>
+    <structure name="output">
+        <structure definition="nabu.integrations.odoo.services.loginToken" name="token"/>
+    </structure>
+    <field minOccurs="0" name="serviceContext" type="java.lang.String"/>
+    <structure collectionName="odooDatabases" definition="nabu.integrations.odoo.crud.odooDatabase.types.output" maxOccurs="unbounded" minOccurs="0" name="databases"/>
+    <structure collectionName="odooDatabases" definition="nabu.integrations.odoo.crud.odooDatabase.types.output" maxOccurs="unbounded" minOccurs="0" name="applicableDatabases"/>
+    <structure collectionName="odooDatabases" definition="nabu.integrations.odoo.crud.odooDatabase.types.output" maxOccurs="unbounded" minOccurs="0" name="defaultDatabases"/>
+    <field minOccurs="0" name="amountOfDefaultDatabases" type="java.lang.Integer"/>
+    <field minOccurs="0" name="amountOfApplicableDatabases" type="java.lang.Integer"/>
+    <structure collectionName="odooDatabases" definition="nabu.integrations.odoo.crud.odooDatabase.types.output" minOccurs="0" name="databaseToUse"/>
+</structure>

@@ -1,0 +1,419 @@
+For example: 
+
+{
+	"content": {
+		"jsonrpc": "2.0",
+		"result": [
+			{
+				"analytic_distribution": {
+					"string": "Analytic Distribution",
+					"type": "json"
+				},
+				"analytic_distribution_search": {
+					"string": "Analytic Distribution Search",
+					"type": "json",
+					"searchable": false
+				},
+				"analytic_precision": {
+					"string": "Analytic Precision",
+					"type": "integer"
+				},
+				"move_id": {
+					"string": "Journal Entry",
+					"type": "many2one"
+				},
+				"journal_id": {
+					"string": "Journal",
+					"type": "many2one"
+				},
+				"company_id": {
+					"string": "Company",
+					"type": "many2one"
+				},
+				"company_currency_id": {
+					"string": "Company Currency",
+					"type": "many2one"
+				},
+				"move_name": {
+					"string": "Number",
+					"type": "char"
+				},
+				"parent_state": {
+					"string": "Status",
+					"type": "selection"
+				},
+				"date": {
+					"string": "Date",
+					"type": "date"
+				},
+				"ref": {
+					"string": "Reference",
+					"type": "char"
+				},
+				"is_storno": {
+					"help": "Utility field to express whether the journal item is subject to storno accounting",
+					"string": "Company Storno Accounting",
+					"type": "boolean"
+				},
+				"sequence": {
+					"string": "Sequence",
+					"type": "integer"
+				},
+				"move_type": {
+					"string": "Type",
+					"type": "selection"
+				},
+				"account_id": {
+					"string": "Account",
+					"type": "many2one"
+				},
+				"name": {
+					"string": "Label",
+					"type": "char"
+				},
+				"debit": {
+					"string": "Debit",
+					"type": "monetary"
+				},
+				"credit": {
+					"string": "Credit",
+					"type": "monetary"
+				},
+				"balance": {
+					"string": "Balance",
+					"type": "monetary"
+				},
+				"cumulated_balance": {
+					"help": "Cumulated balance depending on the domain and the order chosen in the view.",
+					"string": "Cumulated Balance",
+					"type": "monetary"
+				},
+				"currency_rate": {
+					"help": "Currency rate from company currency to document currency.",
+					"string": "Currency Rate",
+					"type": "float"
+				},
+				"amount_currency": {
+					"help": "The amount expressed in an optional other currency if it is a multi-currency entry.",
+					"string": "Amount in Currency",
+					"type": "monetary"
+				},
+				"currency_id": {
+					"string": "Currency",
+					"type": "many2one"
+				},
+				"is_same_currency": {
+					"string": "Is Same Currency",
+					"type": "boolean"
+				},
+				"partner_id": {
+					"string": "Partner",
+					"type": "many2one"
+				},
+				"reconcile_model_id": {
+					"string": "Reconciliation Model",
+					"type": "many2one"
+				},
+				"payment_id": {
+					"help": "The payment that created this entry",
+					"string": "Originator Payment",
+					"type": "many2one"
+				},
+				"statement_line_id": {
+					"help": "The statement line that created this entry",
+					"string": "Originator Statement Line",
+					"type": "many2one"
+				},
+				"statement_id": {
+					"help": "The bank statement used for bank reconciliation",
+					"string": "Statement",
+					"type": "many2one"
+				},
+				"tax_ids": {
+					"string": "Taxes",
+					"type": "many2many"
+				},
+				"group_tax_id": {
+					"string": "Originator Group of Taxes",
+					"type": "many2one"
+				},
+				"tax_line_id": {
+					"help": "Indicates that this journal item is a tax line",
+					"string": "Originator Tax",
+					"type": "many2one"
+				},
+				"tax_group_id": {
+					"string": "Originator tax group",
+					"type": "many2one"
+				},
+				"tax_base_amount": {
+					"string": "Base Amount",
+					"type": "monetary"
+				},
+				"tax_repartition_line_id": {
+					"help": "Tax distribution line that caused the creation of this move line, if any",
+					"string": "Originator Tax Distribution Line",
+					"type": "many2one"
+				},
+				"tax_tag_ids": {
+					"help": "Tags assigned to this line by the tax creating it, if any. It determines its impact on financial reports.",
+					"string": "Tags",
+					"type": "many2many"
+				},
+				"tax_tag_invert": {
+					"string": "Invert Tags",
+					"type": "boolean"
+				},
+				"amount_residual": {
+					"help": "The residual amount on a journal item expressed in the company currency.",
+					"string": "Residual Amount",
+					"type": "monetary"
+				},
+				"amount_residual_currency": {
+					"help": "The residual amount on a journal item expressed in its currency (possibly not the company currency).",
+					"string": "Residual Amount in Currency",
+					"type": "monetary"
+				},
+				"reconciled": {
+					"string": "Reconciled",
+					"type": "boolean"
+				},
+				"full_reconcile_id": {
+					"string": "Matching",
+					"type": "many2one"
+				},
+				"matched_debit_ids": {
+					"help": "Debit journal items that are matched with this journal item.",
+					"string": "Matched Debits",
+					"type": "one2many"
+				},
+				"matched_credit_ids": {
+					"help": "Credit journal items that are matched with this journal item.",
+					"string": "Matched Credits",
+					"type": "one2many"
+				},
+				"matching_number": {
+					"help": "Matching number for this line, 'P' if it is only partially reconcile, or the name of the full reconcile if it exists.",
+					"string": "Matching #",
+					"type": "char"
+				},
+				"is_account_reconcile": {
+					"help": "Check this box if this account allows invoices & payments matching of journal items.",
+					"string": "Account Reconcile",
+					"type": "boolean"
+				},
+				"account_type": {
+					"help": "Account Type is used for information purpose, to generate country-specific legal reports, and set the rules to close a fiscal year and generate opening entries.",
+					"string": "Internal Type",
+					"type": "selection"
+				},
+				"account_internal_group": {
+					"string": "Internal Group",
+					"type": "selection"
+				},
+				"account_root_id": {
+					"string": "Account Root",
+					"type": "many2one"
+				},
+				"display_type": {
+					"string": "Display Type",
+					"type": "selection"
+				},
+				"product_id": {
+					"string": "Product",
+					"type": "many2one"
+				},
+				"product_uom_id": {
+					"string": "Unit of Measure",
+					"type": "many2one"
+				},
+				"product_uom_category_id": {
+					"help": "Conversion between Units of Measure can only occur if they belong to the same category. The conversion will be made based on the ratios.",
+					"string": "Category",
+					"type": "many2one"
+				},
+				"quantity": {
+					"help": "The optional quantity expressed by this line, eg: number of product sold. The quantity is not a legal requirement but is very useful for some reports.",
+					"string": "Quantity",
+					"type": "float"
+				},
+				"date_maturity": {
+					"help": "This field is used for payable and receivable journal entries. You can put the limit date for the payment of this line.",
+					"string": "Due Date",
+					"type": "date"
+				},
+				"price_unit": {
+					"string": "Unit Price",
+					"type": "float"
+				},
+				"price_subtotal": {
+					"string": "Subtotal",
+					"type": "monetary"
+				},
+				"price_total": {
+					"string": "Total",
+					"type": "monetary"
+				},
+				"discount": {
+					"string": "Discount (%)",
+					"type": "float"
+				},
+				"tax_calculation_rounding_method": {
+					"string": "Tax calculation rounding method",
+					"type": "selection"
+				},
+				"term_key": {
+					"string": "Term Key",
+					"type": "binary"
+				},
+				"tax_key": {
+					"string": "Tax Key",
+					"type": "binary"
+				},
+				"compute_all_tax": {
+					"string": "Compute All Tax",
+					"type": "binary"
+				},
+				"compute_all_tax_dirty": {
+					"string": "Compute All Tax Dirty",
+					"type": "boolean"
+				},
+				"epd_key": {
+					"string": "Epd Key",
+					"type": "binary"
+				},
+				"epd_needed": {
+					"string": "Epd Needed",
+					"type": "binary"
+				},
+				"epd_dirty": {
+					"string": "Epd Dirty",
+					"type": "boolean"
+				},
+				"analytic_line_ids": {
+					"string": "Analytic lines",
+					"type": "one2many"
+				},
+				"discount_date": {
+					"help": "Last date at which the discounted amount must be paid in order for the Early Payment Discount to be granted",
+					"string": "Discount Date",
+					"type": "date"
+				},
+				"discount_amount_currency": {
+					"string": "Discount amount in Currency",
+					"type": "monetary"
+				},
+				"discount_balance": {
+					"string": "Discount Balance",
+					"type": "monetary"
+				},
+				"blocked": {
+					"help": "You can check this box to mark this journal item as a litigation with the associated partner",
+					"string": "No Follow-up",
+					"type": "boolean"
+				},
+				"is_refund": {
+					"string": "Is Refund",
+					"type": "boolean"
+				},
+				"id": {
+					"string": "ID",
+					"type": "integer"
+				},
+				"display_name": {
+					"string": "Display Name",
+					"type": "char"
+				},
+				"create_uid": {
+					"string": "Created by",
+					"type": "many2one"
+				},
+				"create_date": {
+					"string": "Created on",
+					"type": "datetime"
+				},
+				"write_uid": {
+					"string": "Last Updated by",
+					"type": "many2one"
+				},
+				"write_date": {
+					"string": "Last Updated on",
+					"type": "datetime"
+				},
+				"move_attachment_ids": {
+					"string": "Move Attachment",
+					"type": "one2many"
+				},
+				"deferred_start_date": {
+					"help": "Date at which the deferred expense\/revenue starts",
+					"string": "Start Date",
+					"type": "date"
+				},
+				"deferred_end_date": {
+					"help": "Date at which the deferred expense\/revenue ends",
+					"string": "End Date",
+					"type": "date"
+				},
+				"has_deferred_moves": {
+					"string": "Has Deferred Moves",
+					"type": "boolean"
+				},
+				"purchase_line_id": {
+					"string": "Purchase Order Line",
+					"type": "many2one"
+				},
+				"purchase_order_id": {
+					"string": "Purchase Order",
+					"type": "many2one"
+				},
+				"stock_valuation_layer_ids": {
+					"string": "Stock Valuation Layer",
+					"type": "one2many"
+				},
+				"expected_pay_date": {
+					"help": "Expected payment date as manually set through the customer statement(e.g: if you had the customer on the phone and want to remember the date he promised he would pay)",
+					"string": "Expected Date",
+					"type": "date"
+				},
+				"is_downpayment": {
+					"string": "Is Downpayment",
+					"type": "boolean"
+				},
+				"sale_line_ids": {
+					"string": "Sales Order Lines",
+					"type": "many2many"
+				},
+				"asset_ids": {
+					"string": "Related Assets",
+					"type": "many2many"
+				},
+				"non_deductible_tax_value": {
+					"string": "Non Deductible Tax Value",
+					"type": "monetary"
+				},
+				"followup_line_id": {
+					"string": "Follow-up Level",
+					"type": "many2one"
+				},
+				"last_followup_date": {
+					"string": "Latest Follow-up",
+					"type": "date"
+				},
+				"next_action_date": {
+					"help": "Date where the next action should be taken for a receivable item. Usually, automatically set when sending reminders through the customer statement.",
+					"string": "Next Action Date",
+					"type": "date"
+				},
+				"invoice_date": {
+					"string": "Invoice\/Bill Date",
+					"type": "date"
+				},
+				"invoice_origin": {
+					"help": "The document(s) that generated the invoice.",
+					"string": "Origin",
+					"type": "char"
+				}
+			}
+		]
+	}
+}

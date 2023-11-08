@@ -1,0 +1,3 @@
+<structure name="responseHeader">
+    <field alias="Set-Cookie" maxOccurs="unbounded" name="setCookie" type="java.lang.String"/>
+</structure>

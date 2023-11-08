@@ -1,0 +1,21 @@
+<structure name="pipeline">
+    <structure name="input">
+        <field name="model" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="fields" type="java.lang.String"/>
+        <structure definition="nabu.integrations.odoo.services.loginToken" minOccurs="0" name="token"/>
+        <structure definition="be.nabu.eai.repository.util.Filter" maxOccurs="unbounded" minOccurs="0" name="filters"/>
+        <field minOccurs="0" name="recordTypeId" type="java.lang.String"/>
+        <field minOccurs="0" name="limit" type="java.lang.Long"/>
+        <field minOccurs="0" name="offset" type="java.lang.Long"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="orderBy" type="java.lang.String"/>
+    </structure>
+    <structure name="output">
+        <structure definition="java.lang.Object" maxOccurs="unbounded" minOccurs="0" name="records"/>
+    </structure>
+    <structure definition="java.lang.Object" maxOccurs="unbounded" minOccurs="0" name="results"/>
+    <structure definition="nabu.integrations.odoo.out.jsonInput" name="content"/>
+    <structure definition="java.lang.Object" name="jsonInput"/>
+    <structure definition="nabu.integrations.odoo.out.domain" maxOccurs="unbounded" minOccurs="0" name="domains"/>
+    <structure definition="nabu.integrations.odoo.out.domain" minOccurs="0" name="domain"/>
+    <structure definition="nabu.utils.types.ParameterDescription" maxOccurs="unbounded" minOccurs="0" name="parameters"/>
+</structure>

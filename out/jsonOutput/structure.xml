@@ -1,0 +1,4 @@
+<structure name="jsonOutput">
+    <field name="jsonrpc" type="java.lang.String"/>
+    <structure definition="java.lang.Object" maxOccurs="unbounded" minOccurs="0" name="result"/>
+</structure>

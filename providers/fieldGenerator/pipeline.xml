@@ -1,0 +1,5 @@
+<structure interface="be.nabu.eai.module.types.structure.ModelGenerator.getFields" name="pipeline">
+    <structure name="input"/>
+    <structure name="output"/>
+    <structure definition="nabu.integrations.odoo.services.model.field" maxOccurs="unbounded" minOccurs="0" name="fields"/>
+</structure>

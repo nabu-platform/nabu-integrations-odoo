@@ -1,0 +1,8 @@
+<structure collectionName="odooDatabases" name="odooDatabase">
+    <field name="id" pattern="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}|[0-9a-fA-F]{32}" primaryKey="true" type="java.util.UUID"/>
+    <field name="database" type="java.lang.String"/>
+    <field name="endpoint" type="java.net.URI"/>
+    <field name="username" type="java.lang.String"/>
+    <field name="password" type="java.lang.String"/>
+    <field minOccurs="0" name="context" type="java.lang.String"/>
+</structure>

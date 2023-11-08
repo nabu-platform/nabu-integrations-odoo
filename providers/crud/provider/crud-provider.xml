@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<crudProvider>
+    <createService>nabu.integrations.odoo.providers.crud.create</createService>
+    <deleteService>nabu.integrations.odoo.providers.crud.delete</deleteService>
+    <listService>nabu.integrations.odoo.providers.crud.list</listService>
+    <updateService>nabu.integrations.odoo.providers.crud.update</updateService>
+</crudProvider>

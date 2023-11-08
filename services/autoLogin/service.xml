@@ -1,0 +1,346 @@
+<sequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		disabled="false"
+		id="4f92597e46a24634a490a1d838e8593a"
+		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="d976dd778b31403e9bab9bf4b4d35505"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="48d0ab26afd74ebdb46fc0346a7bb779"
+				serviceId="nabu.utils.Runtime.getContext"
+				resultName="result49459a4f5fa54536984b35f499682744"
+				temporaryMapping="true"
+				x="94"
+				y="105"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="811c4a8ce9144df2a17f5bc2d9a12226"
+					mask="false"
+					optional="false"
+					fixedValue="true">
+				<from>odoo.token</from>
+				<to>key</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+				disabled="false"
+				id="015a7cc2e761402da85f143976dff3f1"
+				mask="false"
+				optional="false"
+				fixedValue="false">
+			<from>result49459a4f5fa54536984b35f499682744/value</from>
+			<to>output/token</to>
+		</steps>
+	</steps>
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			disabled="false"
+			id="e5ab5fb90006492f88dd585b20204fa4"
+			label="!output/token"
+			lineNumber="3">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Get service context and available databases"
+				disabled="false"
+				id="e808e8fd0af64a6899766e5d0404a230"
+				lineNumber="4">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="bbc00a1dc3bc4cd881e6647bc86ac97f"
+					serviceId="nabu.utils.Runtime.getServiceContext"
+					resultName="resulta2364cc8f4d143138924c9d73ab12dc0"
+					temporaryMapping="true"
+					x="157"
+					y="206"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="d6f368f92a86438a833acdc9696e2075"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resulta2364cc8f4d143138924c9d73ab12dc0/serviceContext</from>
+				<to>serviceContext</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="2c69e180434948239490433806c7e64d"
+					serviceId="nabu.integrations.odoo.crud.odooDatabase.services.list"
+					resultName="resultdaa51d0c163b4ff0b2ea25fc60d5ed51"
+					temporaryMapping="true"
+					x="145"
+					y="303"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="e9ea1b8a256544399a0f585d4b5b4d31"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultdaa51d0c163b4ff0b2ea25fc60d5ed51/results</from>
+				<to>databases</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Get databases that have no context or a matching context"
+				disabled="false"
+				id="f00a472ffeb94870b15528b46a9ccad1"
+				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="faad5055d2df459281d9532b06abd892"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>databases[/serviceContext ~ context + "\..*" || /serviceContext == context]</from>
+				<to>applicableDatabases</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="7660a6d4fcae496ca4cdab540e9c653e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>databases[context == null]</from>
+				<to>defaultDatabases</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="20c4bf1554ad4ec3a324279e249eab96"
+				lineNumber="6">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="24820ab2b3be4cb7a8787f536f68f532"
+					serviceId="nabu.utils.List.size"
+					resultName="result0e88c6138b11456db8ec85e8c38c0296"
+					temporaryMapping="true"
+					x="171"
+					y="39"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="229519068f4b4560953ad7e464b396b9"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>applicableDatabases</from>
+					<to>list</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="52b5370c13d04f6a8c700a259fc67e80"
+					serviceId="nabu.utils.List.size"
+					resultName="result986421d2f9f34ea3a6bba255ba1d79ab"
+					temporaryMapping="true"
+					x="193"
+					y="207"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d85a512bd290435cab4ddca339db8188"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>defaultDatabases</from>
+					<to>list</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="f9c9214530e7438f86005c2a6a8c7f51"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result986421d2f9f34ea3a6bba255ba1d79ab/size</from>
+				<to>amountOfDefaultDatabases</to>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="51ea16da9a6d4529aab0d437ffa81bb7"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result0e88c6138b11456db8ec85e8c38c0296/size</from>
+				<to>amountOfApplicableDatabases</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+				disabled="false"
+				id="1d4780046c2c4e528507e25e7a489496"
+				lineNumber="7">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+					description="=&quot;Too many matching odoo databases for context: &quot; + serviceContext"
+					disabled="false"
+					id="6feffc2b958645be87ad2c30c5f6e260"
+					label="amountOfApplicableDatabases &gt;= 2"
+					lineNumber="8"
+					message="Too many matching odoo databases"
+					whitelist="false" xsi:nil="true"/>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="6a6885487542402b8ced6c5f22618aa9"
+					label="amountOfApplicableDatabases == 1"
+					lineNumber="9">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="91d238acba6f4d898e97ed278119d4ab"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>applicableDatabases[0]</from>
+					<to>databaseToUse</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+					description="=&quot;Too many default odoo databases for context: &quot; + serviceContext"
+					disabled="false"
+					id="beba9b5d385c47b09719a74d29d7ae03"
+					label="amountOfDefaultDatabases &gt;= 2"
+					lineNumber="10"
+					message="Too many default odoo databases"
+					whitelist="false" xsi:nil="true"/>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="295bea93e6844f249d6f46a599077a69"
+					label="amountOfDefaultDatabases == 1"
+					lineNumber="11">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d743f2c88b844387b0442aceff690d1f"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>defaultDatabases[0]</from>
+					<to>databaseToUse</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+					description="=&quot;No matching odoo database for context: &quot; + serviceContext"
+					disabled="false"
+					id="1b754ba2b2fa49f3a96f1ee15324eb5e"
+					lineNumber="12"
+					message="No matching odoo database"
+					whitelist="false" xsi:nil="true"/>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="86a9e4709b584da897e5372c03cb43c6"
+				lineNumber="13">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="e21e41a86e7a4988aad9db1ed4727a70"
+					serviceId="nabu.integrations.odoo.services.login"
+					resultName="resultc07f989f71cc49c198a0da8161617360"
+					temporaryMapping="true"
+					x="254"
+					y="31"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="be90ae0d38af4f20a008bf6936d98040"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>databaseToUse/database</from>
+					<to>database</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="47760c679c9047daa423209159ef78c5"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>databaseToUse/endpoint</from>
+					<to>endpoint</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="157b556a162143259af53d02c3997dcb"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>databaseToUse/username</from>
+					<to>username</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f5ddd4533ee94f9990e431b596fa0e62"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>databaseToUse/password</from>
+					<to>password</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="14437f30d6734e34a392e62324645c77"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>resultc07f989f71cc49c198a0da8161617360/token</from>
+				<to>output/token</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+				description="=&quot;Login failed for odoo database for context: &quot; + serviceContext"
+				disabled="false"
+				id="d092b568ce3344f1ad6a879c32a1606c"
+				label="!output/token"
+				lineNumber="14"
+				message="Login failed for odoo database"
+				whitelist="false" xsi:nil="true"/>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="1a211d0a6f1444e1848eda66c678893d"
+				lineNumber="15">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="20b5977d6b4b499ea357a1a387032722"
+					serviceId="nabu.utils.Runtime.setContext"
+					resultName="result801268eb49ab4791af22e1e9a729f45d"
+					temporaryMapping="true"
+					x="257"
+					y="78"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="c6a01042f7804486bfe20d47ae0166b4"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>odoo.token</from>
+					<to>key</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="e1dc5b24ec5b433eb6d2355e23d0a52b"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>output/token</from>
+					<to>value</to>
+				</steps>
+			</steps>
+		</steps>
+	</steps>
+</sequence>
