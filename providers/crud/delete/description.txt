@@ -1,0 +1,1 @@
+Delete usually doesn't work because of foreign key constraints, we use soft delete instead.

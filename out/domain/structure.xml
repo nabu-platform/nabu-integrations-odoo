@@ -3,7 +3,7 @@
     <structure comment="Has to be an array because odoo expects one" matrix="true" maxOccurs="unbounded" minOccurs="0" name="listFilter">
         <field minOccurs="0" name="field" type="java.lang.String"/>
         <field minOccurs="0" name="operator" type="java.lang.String"/>
-        <field minOccurs="0" name="value" type="java.lang.String"/>
-        <field maxOccurs="unbounded" minOccurs="0" name="valueList" type="java.lang.String"/>
+        <structure definition="java.lang.Object" minOccurs="0" name="value"/>
+        <structure definition="java.lang.Object" maxOccurs="unbounded" minOccurs="0" name="valueList"/>
     </structure>
 </structure>

@@ -1,4 +1,5 @@
 <structure interface="be.nabu.eai.module.services.crud.api.CRUDProvider.delete" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
+    <field minOccurs="0" name="collectionName" type="java.lang.String"/>
 </structure>

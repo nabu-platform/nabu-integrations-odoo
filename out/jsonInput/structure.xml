@@ -11,6 +11,7 @@
         <field minOccurs="0" name="model" type="java.lang.String"/>
         <structure matrix="true" maxOccurs="unbounded" name="args">
             <field minOccurs="0" name="id" type="java.lang.Long"/>
+            <field maxOccurs="unbounded" minOccurs="0" name="ids" type="java.lang.Long"/>
             <structure definition="java.lang.Object" minOccurs="0" name="object"/>
         </structure>
         <structure name="kwargs">

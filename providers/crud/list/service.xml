@@ -2,10 +2,210 @@
 		disabled="false"
 		id="437b53efe76f4c01be0fe9685f20b26e"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+			disabled="false"
+			id="fea3ce20add64d209986a3c23ffe22c1"
+			label="input/filters"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				disabled="false"
+				id="8c8ed54cdb634f9d8a6c5d4e68514cb3"
+				lineNumber="3">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="0b5fc4e3b19245d1b138dbc831193691"
+					serviceId="nabu.utils.reflection.Type.describe"
+					resultName="result41aa74aa264b4bc5a6c7f462036ba7a3"
+					temporaryMapping="true"
+					x="152"
+					y="56"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="1496ab40094942408b6b38a1bb6f9bf9"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>input/coreTypeId</from>
+					<to>typeId</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="4e7ff9b11e064b3495a857c3e9b70efd"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result41aa74aa264b4bc5a6c7f462036ba7a3/parameters</from>
+				<to>parameters</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.For"
+				disabled="false"
+				id="8080e311792944a3ad4d426850aa7655"
+				lineNumber="4"
+				variable="filter">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="b90850cb7dc8451aa43ae1f83f60bbc2"
+					lineNumber="5">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="01a193d66fc144da83ddd75fb526094c"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>parameters[name == /filter/key]</from>
+					<to>parameter</to>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Drop"
+						disabled="false"
+						id="f7ab993917f84ada83a5f4152eadd330"
+						path="newValues" xsi:nil="true"/>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+					disabled="false"
+					id="a0a00bba3f2249feb6c7c7f1e7ab8150"
+					label="parameter/alias != null"
+					lineNumber="6">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="015aeb0031164d36af0564a7369fbbc5"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>parameter/alias</from>
+					<to>filter/key</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+					comment="We define some id fields as string lists because odoo sends back stringified values as well. However for the querying we MUST send an integer value"
+					disabled="false"
+					id="2b4debc3ec9a410293c8a910f78f767d"
+					label="filter/key ~ &quot;^.*_id$&quot;"
+					lineNumber="7">
+				<steps xsi:type="be.nabu.libs.services.vm.step.For"
+						disabled="false"
+						id="d00cbbdf616447e6838314e366018c7b"
+						lineNumber="8"
+						variable="value"
+						into="newValues">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							comment="Get type of value"
+							disabled="false"
+							id="00ef1865624444159ace22f353d679dd"
+							lineNumber="9">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="aa5cfc4c366f4821b47df47bef7fb9b2"
+								serviceId="nabu.utils.reflection.Type.of"
+								resultName="result8f21988876d64f0fb6e5c3c8028a79a2"
+								temporaryMapping="true"
+								x="114"
+								y="124"
+								invocationOrder="0"
+								asynchronous="false"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="8a5c56321a0d4e8cb4f704e5bee7f109"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>value</from>
+								<to>typeInstance</to>
+							</steps>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="e6a5f66186a64defb9e2dfd898edbf2d"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>result8f21988876d64f0fb6e5c3c8028a79a2/typeId</from>
+							<to>typeId</to>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
+							disabled="false"
+							id="fdcc673c3e0b4d4da50d2bbb7f677440"
+							lineNumber="10">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Sequence"
+								disabled="false"
+								id="57d7ce4e67864bb2ad6a29d95e676f7f"
+								label="typeId == &quot;java.lang.String&quot; &amp;&amp; value ~ &quot;^[0-9]+$&quot;"
+								lineNumber="11">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+									disabled="false"
+									id="9a41104699ba4d139a71335bece0b718"
+									lineNumber="12">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="a867607fa19547e4938cf2e2ad46bff4"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>value</from>
+									<to>cast</to>
+								</steps>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+									disabled="false"
+									id="9a58fde774024c08a2418168e42dcd04"
+									lineNumber="13">
+								<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+										disabled="false"
+										id="1172176cf3fc43539f7029cd5c72ffdf"
+										mask="false"
+										optional="false"
+										fixedValue="false">
+									<from>cast</from>
+									<to>newValues[0]</to>
+								</steps>
+							</steps>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+								disabled="false"
+								id="e8e5e86ca31e4c2e8cfca233a07847f3"
+								lineNumber="14">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="55c1f35b0ad043c990bb93a4261e9825"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>value</from>
+								<to>newValues[0]</to>
+							</steps>
+						</steps>
+					</steps>
+					<query>filter/values</query>
+				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+						comment="Map newvalues"
+						disabled="false"
+						id="d2afd76d569a418bad32d3ba618b0e2f"
+						lineNumber="15">
+					<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+							disabled="false"
+							id="ddf5f4fac11944558a3a343aaa8a1b4a"
+							mask="false"
+							optional="false"
+							fixedValue="false">
+						<from>newValues</from>
+						<to>filter/values</to>
+					</steps>
+				</steps>
+			</steps>
+			<query>input/filters</query>
+		</steps>
+	</steps>
 	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 			disabled="false"
 			id="686e55f0afaf431ea70cefd02c4b2757"
-			lineNumber="2">
+			lineNumber="16">
 		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 				disabled="false"
 				id="71db5f44c6ee4c35bd5d058218783a44"

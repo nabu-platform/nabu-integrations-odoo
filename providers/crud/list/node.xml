@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-08T10:52:40.206+01:00" lastModified="2023-11-08T10:56:07.919+01:00" leaf="true" version="9">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-08T10:52:40.206+01:00" lastModified="2023-11-09T12:29:18.237+01:00" leaf="true" version="18">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
@@ -7,6 +7,8 @@
     <references>be.nabu.eai.module.services.crud.provider.CRUDMeta</references>
     <references>be.nabu.eai.module.services.crud.CRUDService$TotalCount</references>
     <references>be.nabu.eai.module.services.crud.CRUDFilter</references>
+    <references>nabu.utils.reflection.Type.of</references>
+    <references>nabu.utils.types.ParameterDescription</references>
     <references>be.nabu.eai.module.services.crud.api.CRUDProvider.list</references>
     <references>java.lang.Integer</references>
     <references>nabu.utils.reflection.Type.describe</references>
