@@ -1,4 +1,9 @@
 <structure name="domain">
     <field comment="Should be &quot;&amp;&quot; or &quot;|&quot;, defaults to &quot;&amp;&quot;" minOccurs="0" name="operator" type="java.lang.String"/>
-    <field maxOccurs="unbounded" minOccurs="0" name="filter" type="java.lang.String"/>
+    <structure comment="Has to be an array because odoo expects one" matrix="true" maxOccurs="unbounded" minOccurs="0" name="listFilter">
+        <field minOccurs="0" name="field" type="java.lang.String"/>
+        <field minOccurs="0" name="operator" type="java.lang.String"/>
+        <field minOccurs="0" name="value" type="java.lang.String"/>
+        <field maxOccurs="unbounded" minOccurs="0" name="valueList" type="java.lang.String"/>
+    </structure>
 </structure>

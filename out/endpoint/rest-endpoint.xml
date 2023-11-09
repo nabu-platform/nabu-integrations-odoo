@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restEndpoint>
-    <basePath>/web</basePath>
+    <basePath>/</basePath>
     <gzip>false</gzip>
     <httpClient>nabu.integrations.odoo.out.httpClient</httpClient>
     <requestType>JSON</requestType>

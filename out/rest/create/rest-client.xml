@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restClient>
-    <method>POST</method>
-    <path>/web/dataset/call_kw</path>
-    <input>nabu.integrations.odoo.out.jsonInput</input>
-    <output>nabu.integrations.odoo.out.jsonOutput</output>
     <lenient>true</lenient>
     <ignoreRootIfArrayWrapper>true</ignoreRootIfArrayWrapper>
     <endpoint>nabu.integrations.odoo.out.endpoint</endpoint>

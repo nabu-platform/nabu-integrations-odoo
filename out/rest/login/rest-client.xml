@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <restClient>
     <method>GET</method>
-    <path>/session/authenticate</path>
+    <path>/web/session/authenticate</path>
     <responseHeaders>Set-Cookie</responseHeaders>
     <input>nabu.integrations.odoo.out.jsonInput</input>
     <output>nabu.integrations.odoo.out.rest.loginOutput</output>

@@ -18,4 +18,5 @@
     <structure definition="nabu.integrations.odoo.out.domain" maxOccurs="unbounded" minOccurs="0" name="domains"/>
     <structure definition="nabu.integrations.odoo.out.domain" minOccurs="0" name="domain"/>
     <structure definition="nabu.utils.types.ParameterDescription" maxOccurs="unbounded" minOccurs="0" name="parameters"/>
+    <field minOccurs="0" name="amountOfValues" type="java.lang.Integer"/>
 </structure>
