@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-08T10:52:47.677+01:00" lastModified="2023-11-08T10:53:09.315+01:00" leaf="true" version="3">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-08T10:52:47.677+01:00" lastModified="2023-11-09T11:55:51.836+01:00" leaf="true" version="4">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>be.nabu.eai.module.services.crud.provider.CRUDMeta</references>
     <references>be.nabu.eai.module.services.crud.api.CRUDProvider.update</references>
+    <references>nabu.integrations.odoo.services.object.update</references>
     <references>java.lang.Object</references>
     <references>java.lang.String</references>
 </node>

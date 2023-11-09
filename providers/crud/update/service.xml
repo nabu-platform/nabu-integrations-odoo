@@ -2,4 +2,30 @@
 		disabled="false"
 		id="9cc6c83e582c4bb88370c2d2543e151a"
 		lineNumber="1">
+	<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+			disabled="false"
+			id="80b289405bd945a59cb1f05b1dfe3cff"
+			lineNumber="2">
+		<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+				disabled="false"
+				id="7fcf32ac100f4f4292f65b7803398352"
+				serviceId="nabu.integrations.odoo.services.object.update"
+				resultName="result2565198db5cc4275809f0ae81d9d08bd"
+				temporaryMapping="true"
+				x="226"
+				y="106"
+				invocationOrder="0"
+				asynchronous="false"
+				recache="false">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="320a6090ba9e4087a7f48998a0a8038e"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>input/instance</from>
+				<to>object</to>
+			</steps>
+		</steps>
+	</steps>
 </sequence>

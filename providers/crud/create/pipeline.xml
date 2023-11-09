@@ -1,4 +1,6 @@
 <structure interface="be.nabu.eai.module.services.crud.api.CRUDProvider.create" name="pipeline">
     <structure name="input"/>
     <structure name="output"/>
+    <structure definition="nabu.utils.types.ParameterDescription" minOccurs="0" name="primaryKeyParameter"/>
+    <field name="id" type="java.lang.Long"/>
 </structure>
