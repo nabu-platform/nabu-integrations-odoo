@@ -449,6 +449,15 @@
 					<from>dateTime</from>
 					<to>output/fields[0]/type</to>
 				</steps>
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="f44a9ac74a3e4fdb90f366e3126eeab4"
+						mask="false"
+						optional="false"
+						fixedValue="true">
+					<from>yyyy-MM-dd HH:mm:ss</from>
+					<to>output/fields[0]/format</to>
+				</steps>
 			</steps>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"

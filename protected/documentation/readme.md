@@ -55,6 +55,34 @@ AttributeError: 'NoneType' object has no attribute 'copy'
 
 Ironically even though the return value of the create has an "id" field, that field is null. Instead the actual id is contained in the "result" field.
 
+# Operators et al
+
+Quote:
+
+"
+	A definitive list of search term operators can, in fact, be found in the source code (here) can't they?
+	
+	Each tuple in the search domain needs to have 3 elements, in the form: ('field_name', 'operator', value), where:
+	
+	field_name must be a valid name of field of the object model, possibly following many-to-one relationships using dot-notation, e.g 'street' or 'partner_id.country' are valid values.
+	operator must be a string with a valid comparison operator from this list: =, !=, >, >=, <, <=, like, ilike, in, not in, child_of, parent_left, parent_right The semantics of most of these operators are obvious. The child_of operator will look for records who are children or grand-children of a given record, according to the semantics of this model (i.e following the relationship field named by self._parent_name, by default parent_id.
+	value must be a valid value to compare with the values of field_name, depending on its type.
+	Domain criteria can be combined using 3 logical operators than can be added between tuples:
+	
+	'&' (logical AND, default)
+	'|' (logical OR)
+	'!' (logical NOT)
+	These are prefix operators and the arity of the '&' and '|' operator is 2, while the arity of the '!' is just 1. Be very careful about this when you combine them the first time.
+	
+	Here is an example of searching for Partners named ABC from Belgium and Germany whose language is not english ::
+	
+	[('name','=','ABC'),'!',('language.code','=','en_US'),'|',
+	('country_id.code','=','be'),('country_id.code','=','de')]
+	The '&' is omitted as it is the default, and of course we could have used '!=' for the language, but what this domain really represents is::
+	
+	[(name is 'ABC' AND (language is NOT english) AND (country is Belgium OR Germany))]
+"
+
 # Endpoints
 
 Quote:

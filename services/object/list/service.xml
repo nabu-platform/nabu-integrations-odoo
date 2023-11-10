@@ -670,48 +670,10 @@
 						lineNumber="28"
 						variable="parameter">
 					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							comment="Get the value"
 							disabled="false"
 							id="2d2c320dad0444dcb8987d50742fc8e3"
 							lineNumber="29">
-						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
-								disabled="false"
-								id="90c2a3d3415d46a6becf33be935286c7"
-								serviceId="nabu.utils.reflection.Type.set"
-								resultName="resultf580bbe8c4aa44b7b2919849132f5d8b"
-								temporaryMapping="true"
-								x="552"
-								y="211"
-								invocationOrder="2"
-								asynchronous="false"
-								recache="false">
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
-									id="86d668da68c94a2f95b40ecfc31eaa5c"
-									mask="false"
-									optional="false"
-									fixedValue="false">
-								<from>result43407f8e8d004ae0afecb0472895f87f/value</from>
-								<to>value</to>
-							</steps>
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
-									id="a7f9f985d9eb46308adcc270d4d548c8"
-									mask="false"
-									optional="false"
-									fixedValue="false">
-								<from>parameter/name</from>
-								<to>path</to>
-							</steps>
-							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
-									disabled="false"
-									id="8a3d32c1b78649e1b76567ffd181dba2"
-									mask="false"
-									optional="false"
-									fixedValue="false">
-								<from>output/records[0]</from>
-								<to>typeInstance</to>
-							</steps>
-						</steps>
 						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 								disabled="false"
 								id="9eaddb42b7f5469a8d759c8e7c0a1536"
@@ -770,6 +732,61 @@
 									fixedValue="false">
 								<from>parameter/name</from>
 								<to>options[1]</to>
+							</steps>
+						</steps>
+						<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+								disabled="false"
+								id="048aff9fc4d54cad88fdcc86ed3e5305"
+								mask="false"
+								optional="false"
+								fixedValue="false">
+							<from>result43407f8e8d004ae0afecb0472895f87f/value</from>
+							<to>value</to>
+						</steps>
+					</steps>
+					<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+							comment="&quot;false&quot; is only allowed for boolean values"
+							disabled="false"
+							id="0aea17fc91864be7bb98062bdb1c585a"
+							label="value != false ||  parameter/typeName == &quot;boolean&quot;"
+							lineNumber="30">
+						<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+								disabled="false"
+								id="3dba1799af8c4fdf803579847612114f"
+								serviceId="nabu.utils.reflection.Type.set"
+								resultName="resultf580bbe8c4aa44b7b2919849132f5d8b"
+								temporaryMapping="true"
+								x="222"
+								y="63"
+								invocationOrder="2"
+								asynchronous="false"
+								recache="false">
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="86d25d932e4e4e5c8dd50c98afde5256"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>parameter/name</from>
+								<to>path</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="cd99502d0f9f4401b68ab8a5cf50e4b4"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>output/records[0]</from>
+								<to>typeInstance</to>
+							</steps>
+							<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+									disabled="false"
+									id="79c10b35270445c68828f24350a91e07"
+									mask="false"
+									optional="false"
+									fixedValue="false">
+								<from>value</from>
+								<to>value</to>
 							</steps>
 						</steps>
 					</steps>
