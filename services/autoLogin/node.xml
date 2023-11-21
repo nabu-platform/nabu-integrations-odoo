@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-07T13:21:09.657+01:00" lastModified="2023-11-08T09:58:40.308+01:00" leaf="true" version="18">
+<node artifactManager="be.nabu.eai.module.services.vm.VMServiceManager" created="2023-11-07T13:21:09.657+01:00" lastModified="2023-11-16T09:06:38.400+01:00" leaf="true" version="20">
     <environmentId>apollo</environmentId>
     <hidden>false</hidden>
     <locked>false</locked>
     <properties/>
     <references>nabu.integrations.odoo.services.loginToken</references>
     <references>nabu.utils.List.size</references>
+    <references>nabu.utils.Runtime.getForContext</references>
     <references>nabu.utils.Runtime.setContext</references>
     <references>nabu.integrations.odoo.services.login</references>
     <references>nabu.utils.Runtime.getContext</references>

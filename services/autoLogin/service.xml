@@ -91,10 +91,52 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-				comment="Get databases that have no context or a matching context"
 				disabled="false"
-				id="f00a472ffeb94870b15528b46a9ccad1"
+				id="b4add62272b844b0bb4382813650b23e"
 				lineNumber="5">
+			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
+					disabled="false"
+					id="c688fe138ee243f68310d8f062b44b12"
+					serviceId="nabu.utils.Runtime.getForContext"
+					resultName="result6f8967e1bf0641a89f2e5b6bfe0f8e93"
+					temporaryMapping="true"
+					x="219"
+					y="86"
+					invocationOrder="0"
+					asynchronous="false"
+					recache="false">
+				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+						disabled="false"
+						id="d4be4795a6644344ab4540e8fdd17719"
+						mask="false"
+						optional="false"
+						fixedValue="false">
+					<from>databases</from>
+					<to>objects</to>
+				</steps>
+			</steps>
+			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
+					disabled="false"
+					id="ec8e3ef94bc047a1806a5a323aef8e0d"
+					mask="false"
+					optional="false"
+					fixedValue="false">
+				<from>result6f8967e1bf0641a89f2e5b6bfe0f8e93/match</from>
+				<to>databaseToUse</to>
+			</steps>
+		</steps>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
+				disabled="false"
+				id="730736c85c4c4c08a7c0ebab68a46bf0"
+				label="!databaseToUse"
+				lineNumber="6"
+				message="Can not determine the correct database to use for the given context"
+				whitelist="false" xsi:nil="true"/>
+		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
+				comment="Get databases that have no context or a matching context"
+				disabled="true"
+				id="f00a472ffeb94870b15528b46a9ccad1"
+				lineNumber="7">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 					disabled="false"
 					id="faad5055d2df459281d9532b06abd892"
@@ -115,9 +157,9 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
-				disabled="false"
+				disabled="true"
 				id="20c4bf1554ad4ec3a324279e249eab96"
-				lineNumber="6">
+				lineNumber="8">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="24820ab2b3be4cb7a8787f536f68f532"
@@ -180,22 +222,22 @@
 			</steps>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Switch"
-				disabled="false"
+				disabled="true"
 				id="1d4780046c2c4e528507e25e7a489496"
-				lineNumber="7">
+				lineNumber="9">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Throw"
 					description="=&quot;Too many matching odoo databases for context: &quot; + serviceContext"
 					disabled="false"
 					id="6feffc2b958645be87ad2c30c5f6e260"
 					label="amountOfApplicableDatabases &gt;= 2"
-					lineNumber="8"
+					lineNumber="10"
 					message="Too many matching odoo databases"
 					whitelist="false" xsi:nil="true"/>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="6a6885487542402b8ced6c5f22618aa9"
 					label="amountOfApplicableDatabases == 1"
-					lineNumber="9">
+					lineNumber="11">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="91d238acba6f4d898e97ed278119d4ab"
@@ -211,14 +253,14 @@
 					disabled="false"
 					id="beba9b5d385c47b09719a74d29d7ae03"
 					label="amountOfDefaultDatabases &gt;= 2"
-					lineNumber="10"
+					lineNumber="12"
 					message="Too many default odoo databases"
 					whitelist="false" xsi:nil="true"/>
 			<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 					disabled="false"
 					id="295bea93e6844f249d6f46a599077a69"
 					label="amountOfDefaultDatabases == 1"
-					lineNumber="11">
+					lineNumber="13">
 				<steps xsi:type="be.nabu.libs.services.vm.step.Link"
 						disabled="false"
 						id="d743f2c88b844387b0442aceff690d1f"
@@ -233,14 +275,14 @@
 					description="=&quot;No matching odoo database for context: &quot; + serviceContext"
 					disabled="false"
 					id="1b754ba2b2fa49f3a96f1ee15324eb5e"
-					lineNumber="12"
+					lineNumber="14"
 					message="No matching odoo database"
 					whitelist="false" xsi:nil="true"/>
 		</steps>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="86a9e4709b584da897e5372c03cb43c6"
-				lineNumber="13">
+				lineNumber="15">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="e21e41a86e7a4988aad9db1ed4727a70"
@@ -304,13 +346,13 @@
 				disabled="false"
 				id="d092b568ce3344f1ad6a879c32a1606c"
 				label="!output/token"
-				lineNumber="14"
+				lineNumber="16"
 				message="Login failed for odoo database"
 				whitelist="false" xsi:nil="true"/>
 		<steps xsi:type="be.nabu.libs.services.vm.step.Map"
 				disabled="false"
 				id="1a211d0a6f1444e1848eda66c678893d"
-				lineNumber="15">
+				lineNumber="17">
 			<steps xsi:type="be.nabu.libs.services.vm.step.Invoke"
 					disabled="false"
 					id="20b5977d6b4b499ea357a1a387032722"
